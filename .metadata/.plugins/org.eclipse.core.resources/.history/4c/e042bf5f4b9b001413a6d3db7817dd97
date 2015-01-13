@@ -1,10 +1,6 @@
 package Classes;
 
 public abstract class Builder {
-	public class Home {
-
-	}
-
 	private int rooms;
 	private int windows;
 	private String street;
