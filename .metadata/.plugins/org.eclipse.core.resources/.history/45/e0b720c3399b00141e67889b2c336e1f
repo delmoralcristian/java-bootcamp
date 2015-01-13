@@ -1,0 +1,55 @@
+package Classes;
+
+public class Interior {
+	private int reception;
+	private int rooms;
+	private boolean nurses; // Nurses available
+	private int maximumcapacity; // Maximum capacity of patients
+	private int staff;
+	
+	public Interior(){
+		this.reception= this.setReception(0);
+		this.rooms= this.setRooms(0);
+		this.maximumcapacity= this.setMaximumcapacity(0);
+		this.staff= this.setStaff(0);
+		this.nurses= this.setNurses(false);
+		
+	}
+	
+	public int getReception() {
+		return reception;
+	}
+	public void setReception(int reception) {
+		this.reception = reception;
+	}
+	public int getRooms() {
+		return rooms;
+	}
+	public void setRooms(int rooms) {
+		this.rooms = rooms;
+	}
+
+	public int getMaximumcapacity() {
+		return maximumcapacity;
+	}
+
+	public void setMaximumcapacity(int maximumcapacity) {
+		this.maximumcapacity = maximumcapacity;
+	}
+
+	public int getStaff() {
+		return staff;
+	}
+
+	public void setStaff(int staff) {
+		this.staff = staff;
+	}
+
+	public boolean isNurses() {
+		return nurses;
+	}
+
+	public void setNurses(boolean nurses) {
+		this.nurses = nurses;
+	}
+}

@@ -1,0 +1,45 @@
+package Classes;
+
+public class Hospital extends Builder {
+	private int staff;
+	private int reception;
+	private String nombre;
+	
+	
+	public Hospital(int r, int w, String d) {
+		super(r, w, d);
+		
+	}
+
+
+	public int getStaff() {
+		return staff;
+	}
+
+
+	public void setStaff(int staff) {
+		this.staff = staff;
+	}
+
+
+	public int getReception() {
+		return reception;
+	}
+
+
+	public void setReception(int reception) {
+		this.reception = reception;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+
+}

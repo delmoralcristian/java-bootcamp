@@ -1,0 +1,13 @@
+package Classes;
+
+public class Hospital extends Builder {
+	private int staff;
+	private int reception;
+	
+	
+	public Hospital() {
+		
+	}
+	
+
+}
