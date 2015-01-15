@@ -1,22 +1,14 @@
 package point3;
 
-public abstract class HospitalBuilder {
-	private Hospital hospital;
-	
-	public HospitalBuilder(){
-		hospital= new Hospital();
-	}
+public interface HospitalBuilder {
 		
-		public abstract void setNurses();
+		public void setNurses();
 		
-		public abstract void setDoctor();
+		public void setDoctor();
 		
-		public abstract void setDimension();
+		public void setDimension();
 		
-		public abstract void setRoom();
+		public void setRoom();
 		
-		public Hospital getHospital(){
-			return hospital;
-		}
-
+		public Hospital getHospital();
 }

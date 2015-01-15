@@ -1,7 +1,7 @@
 package point3;
 
 public class Director {
-	private HospitalBuilder hospitalbuilder= null;
+	private HospitalBuilder hospitalbuilder;
 	
 	public Director(HospitalBuilder hospitalbuilder){
 		this.hospitalbuilder= hospitalbuilder;

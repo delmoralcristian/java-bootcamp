@@ -3,12 +3,12 @@ package point2;
 
 public interface Builder {
 	
-	public abstract void buildRoom();
+	public void buildRoom();
 	
-	public abstract void paintRoom();
+	public void paintRoom();
 	
-	public abstract void sizeRoom();
+	public void sizeRoom();
 	
-	public abstract Room getRoom();
+	public Room getRoom();
 
 }

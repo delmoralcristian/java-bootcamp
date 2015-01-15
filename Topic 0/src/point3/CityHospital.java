@@ -1,27 +1,33 @@
 package point3;
 
-public class CityHospital extends HospitalBuilder{
+public class CityHospital implements HospitalBuilder {
 
-	@Override
+	private final Hospital hospital;
+
+	public CityHospital() {
+		hospital = new Hospital();
+	}
+
 	public void setNurses() {
 		this.getHospital().setNursesNumber(50);
 	}
 
-	@Override
 	public void setDoctor() {
 		this.getHospital().setDoctorsNumber(25);
-		
+
 	}
 
-	@Override
 	public void setDimension() {
 		this.getHospital().setDimension("Big Hospital");
-		
+
 	}
 
-	@Override
 	public void setRoom() {
-		this.getHospital().setRoomNumber(40);	
+		this.getHospital().setRoomNumber(40);
+	}
+
+	public Hospital getHospital() {
+		return hospital;
 	}
 
 }
