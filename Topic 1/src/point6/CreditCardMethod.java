@@ -1,22 +1,31 @@
 package point6;
-
-public class CreditCardMethod extends AbstractPayment {
+/**
+ * 
+ * @author cris14
+ * Strategy Pattern
+ *
+ */
+public class CreditCardMethod implements PaymentMethod {
 	private String name;
 	private int creditNumber;
+	private double percentage;
 
-	public CreditCardMethod(double amount, String name, int creditNumber) {
-		super(amount);
+	public CreditCardMethod(String name, int creditNumber) {
 		this.name= name;
 		this.creditNumber= creditNumber;
-
+		this.percentage= 0.10;
 
 	}
 
 	@Override
-	public void discount(ShoppingCart shoopingCart) {
-		double discount= shoopingCart.getSubtotal() * this.getPercentage();
-		this.setDiscount(discount);
-		this.setAmount(this.getAmount() - discount);
+	public double discount(ShoppingCart shoppingCart) {
+		System.out.println(this.toString());
+		return shoppingCart.getSubtotal() * this.getPercentage();
+	}
+	
+	@Override
+	public String toString(){
+		return("Paid using credit card payment: "+ "\n");
 	}
 
 	public String getName() {
@@ -33,6 +42,14 @@ public class CreditCardMethod extends AbstractPayment {
 
 	public void setCreditNumber(int creditNumber) {
 		this.creditNumber = creditNumber;
+	}
+	
+	public double getPercentage() {
+		return percentage;
+	}
+
+	public void setPercentage(double percentage) {
+		this.percentage = percentage;
 	}
 
 }

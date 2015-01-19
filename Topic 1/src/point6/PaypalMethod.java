@@ -1,21 +1,29 @@
 package point6;
-
-public class PaypalMethod extends AbstractPayment {
+/**
+ * 
+ * @author cris14
+ * Strategy Pattern
+ *
+ */
+public class PaypalMethod implements PaymentMethod {
 	private String email;
 	private String password;
 	
-	public PaypalMethod(double amount, String email, String password) {
-		super(amount);
+	public PaypalMethod(String email, String password) {
 		this.setEmail(email);
 		this.setPassword(password);
 
 	}
 
 	@Override
-	public void discount(ShoppingCart shoopingCart) {
-		double discount= shoopingCart.getLessExpensive();
-		this.setDiscount(discount);
-		this.setAmount(this.getAmount() - discount);
+	public double discount(ShoppingCart shoppingCart) {
+		System.out.println(this.toString());
+		return shoppingCart.getLessExpensive();
+	}
+	
+	@Override
+	public String toString(){
+		return("Paid using paypal payment: " + "\n");
 	}
 
 	public String getEmail() {
