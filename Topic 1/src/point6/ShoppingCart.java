@@ -110,7 +110,7 @@ public class ShoppingCart implements Subject {
 		return title +sale;
 	}
 	
-	public String SubTotal(){
+	public String subTotal(){
 		return ("The subtotal is: " + this.getSubtotal() + "\n");
 	}
 	

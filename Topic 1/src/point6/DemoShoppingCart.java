@@ -29,7 +29,7 @@ public class DemoShoppingCart {
 		
 		shoppingCart.changePrice("0003", 8000);
 			
-		System.out.println(shoppingCart.SubTotal());
+		System.out.println(shoppingCart.subTotal());
 		
 		shoppingCart.pay(new CashMethod());
 		

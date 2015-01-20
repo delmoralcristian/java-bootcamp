@@ -1,28 +1,24 @@
 package point7;
 
 public class StopState implements PlayListState {
-	/**
-	 * 
-	 * @author cris14
-	 * State Pattern
-	 *
-	 */
-	@Override
-	public void play() {
-		System.out.println("The playlist went from stopped to playing");
 
+	@Override
+	public void doAction(Context context) throws Exception {
+		if((context.getState()== null) ||(State.Play.getName().equals(context.getState().getDescription()))){
+			System.out.println("Player is in Stop state");
+			context.setState(this);	
+		}
+		else{
+			throw new Exception("You can't do this action");
+		}	
 	}
 
 	@Override
-	public void pause() {
-		System.out.println("the playlist can't be paused");
-
+	public String getDescription() {
+		return ("Stop State");
 	}
 
-	@Override
-	public void stop() {
-		System.out.println("The playlist was stopped");
 
-	}
+	
 
 }

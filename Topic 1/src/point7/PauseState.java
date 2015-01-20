@@ -8,21 +8,20 @@ package point7;
 public class PauseState implements PlayListState {
 
 	@Override
-	public void play() {
-		System.out.println("The playlist went from paused to playing");
-
+	public void doAction(Context context) throws Exception {
+			if((context.getState()== null) ||(State.Play.getName().equals(context.getState().getDescription()))){
+				System.out.println("Player is in pause state");
+				context.setState(this);	
+			}
+			else{
+				throw new Exception("You can't do this action");
+			}
 	}
+	
 
 	@Override
-	public void pause() {
-		System.out.println("The playlist was paused");
-
-	}
-
-	@Override
-	public void stop() {
-		System.out.println("The playlist was stopped");
-
+	public String getDescription() {
+		return ("Pause State");
 	}
 
 }

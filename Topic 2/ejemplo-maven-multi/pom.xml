@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>c1.tinet.ejemplos</groupId>
+  <artifactId>ejemplo-maven-multi</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>ejemplo-maven-multi</name>
+  <modules>
+    <module>ejemplo-maven-multi-app</module>
+    <module>ejemplo-maven-multi-web</module>
+    <module>ejemplo-maven-multi-ejb</module>
+    <module>ejemplo-maven-multi-model</module>
+  </modules>
+</project>

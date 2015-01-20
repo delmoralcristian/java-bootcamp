@@ -6,14 +6,12 @@ public abstract class AbstrsctProduct {
 	private String name;
 	private double price;
 	private int units;
-	private MailList mailList;
 	
-	public AbstrsctProduct(int id, String name, double price, int units, MailList mailList){
+	public AbstrsctProduct(int id, String name, double price, int units){
 		this.id= id;
 		this.name= name;
 		this.price= price;
 		this.units= units;
-		this.mailList= mailList;
 	}
 	
 	public abstract String getDescription();
@@ -36,7 +34,6 @@ public abstract class AbstrsctProduct {
 
 	public void setPrice(double price) { //Notify
 		this.price = price;
-		this.mailList.SendEmail("This price was chanched", this.getDescription());
 	}
 
 	public int getUnits() {
@@ -47,13 +44,6 @@ public abstract class AbstrsctProduct {
 		this.units = units;
 	}
 
-	public MailList getMailList() {
-		return mailList;
-	}
-
-	public void setMailList(MailList mailList) {
-		this.mailList = mailList;
-	}
 
 	public int getId() {
 		return id;
