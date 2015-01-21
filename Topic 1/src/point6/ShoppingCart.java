@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class ShoppingCart implements Subject {
+public class ShoppingCart implements Notification {
 	
 	private List<AbstractProduct> products;
 	private List<Observer> observers;

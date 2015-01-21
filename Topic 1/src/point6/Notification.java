@@ -5,7 +5,7 @@ package point6;
  * Observer Pattern
  *
  */
-public interface Subject {
+public interface Notification {
 	
 	public void addObserver(Observer observer);
 	

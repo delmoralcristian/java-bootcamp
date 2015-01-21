@@ -7,7 +7,7 @@ public interface PlayListState {
 	 * State Pattern
 	 *
 	 */
-	public void doAction(Context context)throws Exception;
+	public void doAction(Context context);
 	
 	public String getDescription();
 }

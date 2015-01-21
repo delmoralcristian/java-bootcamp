@@ -8,16 +8,19 @@ package point7;
  */
 
 public class Context {
-	 private PlayListState state;
+	 
+	
+	private PlayListState state;
 
-	   public Context(){
-	   }
+	 public Context(PlayListState state){
+		this.state= state;
+	 }
 
-	   public void setState(PlayListState playListState){
-	      this.state = playListState;		
-	   }
+	 public void setState(PlayListState playListState){
+		 this.state = playListState;		
+	 }
 
-	   public PlayListState getState(){
-	      return state;
-	   }
+	 public PlayListState getState(){
+	    return state;
+	  }
 }

@@ -18,7 +18,11 @@ public abstract class AbstractProduct {
 	public abstract String getDescription();
 	
 	public abstract double subTotalPrice();
-	
+	/**
+	 * 
+	 * This method returns a set with all the items, 
+	 * and then get the more expensive item and the item cheaper
+	 */
 	public abstract Set<Product> allProducts();
 
 	public String getName() {
