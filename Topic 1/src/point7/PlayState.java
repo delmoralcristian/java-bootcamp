@@ -8,23 +8,27 @@ package point7;
  */
 
 public class PlayState implements PlayListState {
-	/**
-	 * if there a song that is playing, I throw an error.
-	 */
-	@Override
-	public void doAction(Context context) {
-		if(this.getDescription().equals(context.getState().getDescription())){
-			System.out.println("You can't do this action");
-		}
-		else{
-			System.out.println("Player is in play state");
-			context.setState(this);	
-		}
-	}
-
+	
 	@Override
 	public String getDescription() {
 		return ("Play State");
+	}
+
+	@Override
+	public void pause(Context contextState) {
+        System.out.println("Pausing the play list");
+        contextState.setState(new PauseState());	
+	}
+
+	@Override
+	public void play(Context contextState) {
+		System.out.println("Nothing to do, the playlist is playing");		
+	}
+
+	@Override
+	public void stop(Context contextState) {
+		System.out.println("Stopping the play list");
+		contextState.setState(new StopState());
 	}
 	
 	

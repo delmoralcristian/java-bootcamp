@@ -6,25 +6,32 @@ package point7;
  *
  */
 public class PauseState implements PlayListState {
-	/**
-	 * I can pause the playlist only if there a song playing.
-	 */
 	
-	@Override
-	public void doAction(Context context){
-			if(State.Play.getName().equals(context.getState().getDescription())){
-				System.out.println("Player is in pause state");
-				context.setState(this);	
-			}
-			else{
-				System.out.println("You can't do this action");
-			}
-	}
 	
-
 	@Override
 	public String getDescription() {
 		return ("Pause State");
+	}
+
+
+	@Override
+	public void pause(Context contextState) {
+		System.out.println("Nothing to do, the playlist is pausing");
+	}
+
+
+	@Override
+	public void play(Context contextState) {
+		System.out.println("Playing from the place the user paused");
+		contextState.setState(new PlayState());	
+	}
+
+
+	@Override
+	public void stop(Context contextState) {
+		System.out.println("Stopping the play list");
+		contextState.setState(new StopState());
+		
 	}
 
 }
