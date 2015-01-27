@@ -9,20 +9,17 @@ public class DecimalTest {
 	Decimal decimal= new Decimal();
 	
 	@Test
-	public void test1(){
-		assertEquals(decimal.toRoman(6),"VI");
-	}
-	
-	@Test
-	public void test2(){
+	public void testConvertionToRomanNumber(){
+		assertEquals(decimal.toRoman(129),"CXXIX");
 		assertEquals(decimal.toRoman(1),"I");
+		assertEquals(decimal.toRoman(7),"VII");
 	}
 	
 	/**
 	 * If the entered number is invalid, shoot me an exception.
 	 */
 	@Test(expected= OverflowException.class)
-	public void test3(){
+	public void testOverflow(){
 		decimal.toRoman(0);
 	}
 

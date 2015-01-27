@@ -1,30 +1,26 @@
 package bootcamp.exercises;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 public class RomanTest {
 
-	Roman roman= new Roman();
-	
+	Roman roman = new Roman();
+
 	@Test
-	public void test1(){
-		assertEquals(roman.toDecimal("V"),5);
+	public void testConvertionToDecimal() {
+		assertEquals(roman.toDecimal("IX"), 9);
+		assertEquals(roman.toDecimal("CXXIX"), 129);
 	}
-	
-	@Test
-	public void test2(){
-		assertEquals(roman.toDecimal("I"),1);
-	}
-	
+
 	/**
 	 * If the roman number is invalid, shoot me an exception.
 	 */
-	@Test(expected= OverflowException.class)
-	public void test3(){
+	@Test(expected = OverflowException.class)
+	public void testOverflow() {
 		roman.toDecimal("AC");
+		roman.toDecimal("IIV");
 	}
-
 
 }
