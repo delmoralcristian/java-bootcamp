@@ -10,6 +10,9 @@ public class ConvertToTextTest {
 
 	@Test
 	public void testConvertToText() {
+		assertEquals(number.convert("0"), "zero and 00/100 dollars.");
+		assertEquals(number.convert("5.73"), "five and 73/100 dollars.");
+		assertEquals(number.convert("20"), "twenty and 00/100 dollars.");
 		assertEquals(number.convert("73,30"), "seventy-three and 30/100 dollars.");
 		assertEquals(number.convert("102,47"), "one hundred two and 47/100 dollars.");
 		assertEquals(number.convert("2523.04"), "two thousand five hundred twenty-three and 04/100 dollars.");
@@ -27,7 +30,13 @@ public class ConvertToTextTest {
 	@Test(expected = OverflowException.class)
 	public void testOverflow() {
 		number.convert("9999999999");
-		number.convert("-1");
+		number.convert("- 1");
+		number.convert("345a5,98b");
+		number.convert("234,234");
+		number.convert("two");
+		number.convert("");
+		number.convert(null);
+		number.convert("3445,3345,70"); // format incorrect
 	}
 
 }

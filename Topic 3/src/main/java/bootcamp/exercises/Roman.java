@@ -14,24 +14,14 @@ public class Roman {
 	}
 
 	private boolean validRomanNumber(String romanNumber) {
-		// char leftNumber = romanNumber.charAt(0);
 		char[] romanLetters = romanNumber.toCharArray();
 		for (char i : romanLetters) {
 			if (!this.validWord(i)) {
 				return false;
-			} /*
-			 * else { if (numberSearch(leftNumber) >= numberSearch(i)) {
-			 * leftNumber = i; } else { return false; } }
-			 */
+			}
 		}
 		return true;
 	}
-
-	/*
-	 * private int numberSearch(char word) { int result = 0; int aux = 0; for
-	 * (char i : ROMAN_NUMBERS) { if (i == word) { result = aux; } aux++; // ; }
-	 * return result; }
-	 */
 
 	public int toDecimal(String romanNumber) {
 		if (this.validRomanNumber(romanNumber)) {

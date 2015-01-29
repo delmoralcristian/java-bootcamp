@@ -3,9 +3,6 @@ package bootcamp.exercises;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-
 public class FileList {
 	private int size;
 	private List<String> files;
@@ -15,16 +12,10 @@ public class FileList {
 		this.files = new ArrayList<String>(this.size);
 	}
 
-	@Before
-	public void startList() {
-		this.files = new ArrayList<String>(this.size);
-	}
-
 	public int getSize() {
 		return size;
 	}
 
-	@After
 	public void delete() {
 		this.files.clear();
 	}

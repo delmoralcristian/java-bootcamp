@@ -14,7 +14,13 @@ public class WordWrappingTest {
 		assertEquals(wordWrapping.wordWrap("Excelent", 5), "Excel, ent");
 		assertEquals(wordWrapping.wordWrap("Excelent", 10), "Excelent");
 		assertEquals(wordWrapping.wordWrap("a b c d e f", 3), "a b, c d, e f");
+		assertEquals(wordWrapping.wordWrap("abcdefghijklm", 4), "abcd, efgh, ijkl, m");
+	}
 
+	@Test(expected = OverflowException.class)
+	public void testOverflow() {
+		wordWrapping.wordWrap("abcdefghijklm", 0);
+		wordWrapping.wordWrap("abcdefghijklm", -1);
 	}
 
 }

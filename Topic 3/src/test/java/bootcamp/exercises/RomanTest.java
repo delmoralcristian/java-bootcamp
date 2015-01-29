@@ -22,5 +22,4 @@ public class RomanTest {
 		roman.toDecimal("AC");
 		roman.toDecimal("IIV");
 	}
-
 }
