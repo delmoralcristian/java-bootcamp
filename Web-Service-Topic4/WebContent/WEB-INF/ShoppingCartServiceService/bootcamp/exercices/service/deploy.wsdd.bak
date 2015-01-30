@@ -1,0 +1,44 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ShoppingCartServiceService WSDL service -->
+
+  <service name="ShoppingCartService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.exercices.bootcamp"/>
+      <parameter name="wsdlServiceElement" value="ShoppingCartServiceService"/>
+      <parameter name="schemaQualified" value="http://service.exercices.bootcamp,http://classes.exercices.bootcamp"/>
+      <parameter name="wsdlServicePort" value="ShoppingCartService"/>
+      <parameter name="className" value="bootcamp.exercices.service.ShoppingCartServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ShoppingCartService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getTotal" qname="operNS:getTotal" xmlns:operNS="http://service.exercices.bootcamp" returnQName="retNS:getTotalReturn" xmlns:retNS="http://service.exercices.bootcamp" returnType="rtns:double" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getDescription" qname="operNS:getDescription" xmlns:operNS="http://service.exercices.bootcamp" soapAction="" >
+      </operation>
+      <operation name="addProduct" qname="operNS:addProduct" xmlns:operNS="http://service.exercices.bootcamp" soapAction="" >
+        <parameter qname="pns:product" xmlns:pns="http://service.exercices.bootcamp" type="tns:Product" xmlns:tns="http://classes.exercices.bootcamp"/>
+      </operation>
+      <operation name="deleteProduct" qname="operNS:deleteProduct" xmlns:operNS="http://service.exercices.bootcamp" soapAction="" >
+        <parameter qname="pns:product" xmlns:pns="http://service.exercices.bootcamp" type="tns:Product" xmlns:tns="http://classes.exercices.bootcamp"/>
+      </operation>
+      <parameter name="allowedMethods" value="addProduct getTotal getDescription deleteProduct"/>
+
+      <typeMapping
+        xmlns:ns="http://classes.exercices.bootcamp"
+        qname="ns:Product"
+        type="java:bootcamp.exercices.classes.Product"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
