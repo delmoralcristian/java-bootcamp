@@ -7,8 +7,8 @@ public class MainClass {
 		
 		MySql mySql= new MySql();
 		try{
-			//mySql.ListPerCourses("Fisica");
-			mySql.ListPerFinal(2);
+			mySql.ListPerCourses("Fisica");
+			//mySql.ListPerFinal(2);
 		}catch (Exception e){
 			System.out.println("Error");
 		}

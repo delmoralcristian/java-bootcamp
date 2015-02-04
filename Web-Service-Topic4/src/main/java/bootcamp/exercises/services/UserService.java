@@ -13,6 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import bootcamp.exercises.classes.Photo;
 import bootcamp.exercises.classes.User;
 
 
@@ -58,4 +59,25 @@ public class UserService implements UserInterface{
 		return Response.status(200).entity("User with " + account + "is deleted successfully").build();
 	}	
 	
+	
+	@Override
+	public void addFriend(User user, User friend){
+		if(!user.getAccount().equals(friend.getAccount())){
+			user.addFriend(friend);
+		}
+	}
+
+	@Override
+	public void uploadPhoto(User user, Photo photo) {
+		user.addPhoto(photo);		
+	}
+
+	@Override
+	public void likePhoto(User user, Photo photo) {
+		for(Photo i: user.getPhotos()){
+			if(i.getUrl().equals(photo.getUrl())){
+				i.setLikeCount(i.getLikeCount()+1);
+			}
+		}
+	}
 }

@@ -13,11 +13,11 @@ public class Product implements Serializable{
 	private double price;
 	private int units;
 	
-	public Product(String id, String name, double price, int units) {
+	public Product(String id, String name, double price) {
 		this.id=id;
 		this.name= name;
 		this.price=price;
-		this.units= units;
+		this.units=1;
 	}
 	
 

@@ -1,5 +1,7 @@
 package bootcamp.exercises.classes;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -12,12 +14,14 @@ public class User {
 	
 	private String account;
 	private String password;
-	private String first_name;
-	private String last_name;
+	private String firstName;
+	private String lastName;
+	private List<User> friends;
+	private List<Photo> photos;
 	
 	@Override
 	public String toString() {
-	   return "User account: " + account + ", password: " + password + ", name: " + first_name + ", surname: " + last_name;
+	   return "User account: " + account + ", password: " + password + ", name: " + firstName + ", surname: " + lastName;
 	}
 	
 	@XmlElement(required=true)
@@ -38,17 +42,43 @@ public class User {
 	
 	@XmlElement(required=true)
 	public String getFirst_name() {
-		return first_name;
+		return firstName;
 	}
 	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+		this.firstName = first_name;
 	}
 	
 	@XmlElement(required=true)
 	public String getLast_name() {
-		return last_name;
+		return lastName;
 	}
 	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+		this.lastName = last_name;
+	}
+
+	@XmlElement(required=true)
+	public List<User> getFriends() {
+		return friends;
+	}
+
+	public void setFriends(List<User> friends) {
+		this.friends = friends;
+	}
+
+	@XmlElement(required=true)
+	public List<Photo> getPhotos() {
+		return photos;
+	}
+
+	public void setPhotos(List<Photo> photos) {
+		this.photos = photos;
+	}
+	
+	public void addPhoto(Photo photo){
+		this.photos.add(photo);
+	}
+	
+	public void addFriend(User user){
+		this.friends.add(user);
 	}
 }
