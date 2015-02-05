@@ -1,0 +1,8 @@
+com\cris\service\HighSchoolService.class
+com\cris\model\Student.class
+com\cris\dao\HighSchoolDao.class
+com\cris\model\Course.class
+com\cris\model\Teacher.class
+com\cris\service\imp\HighSchoolServiceImp.class
+com\cris\dao\imp\HighSchoolDaoImp.class
+com\cris\model\Assists.class
